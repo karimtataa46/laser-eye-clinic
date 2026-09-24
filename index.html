@@ -103,17 +103,15 @@
   @media (max-width: 560px) { section.block { padding-block: 64px; } }
 
   /* Services */
-  /* Five services: three across the first row, two wider ones below */
-  .services { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-inline-start: 1px solid var(--line); }
-  .svc { grid-column: span 2; padding: 34px 30px 36px; border-bottom: 1px solid var(--line); border-inline-end: 1px solid var(--line); transition: background .25s; }
-  .svc:nth-child(n+4) { grid-column: span 3; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-inline-start: 1px solid var(--line); }
+  .svc { padding: 34px 30px 36px; border-bottom: 1px solid var(--line); border-inline-end: 1px solid var(--line); transition: background .25s; }
   .svc:hover { background: var(--ivory); }
   .svc svg { width: 40px; height: 40px; color: var(--gold); margin-bottom: 20px; }
   .svc h3 { font-size: 21px; margin-bottom: 10px; }
   .svc p { margin: 0; color: var(--muted); font-size: 15px; }
   .svc .term { display: block; margin-top: 14px; font-size: 13px; color: var(--gold-deep); font-weight: 500; }
-  @media (max-width: 900px) { .services { grid-template-columns: repeat(2, 1fr); } .svc, .svc:nth-child(n+4) { grid-column: span 1; } .svc:last-child { grid-column: span 2; } }
-  @media (max-width: 580px) { .services { grid-template-columns: 1fr; } .svc, .svc:nth-child(n+4), .svc:last-child { grid-column: auto; } .svc { padding: 28px 22px; } }
+  @media (max-width: 900px) { .services { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .services { grid-template-columns: 1fr; } .svc { padding: 28px 22px; } }
 
   /* Journey */
   .journey-bg { background: var(--ivory); border-block: 1px solid var(--line); }
@@ -262,6 +260,12 @@
             <h3><span class="t-ar">فحص النظر الشامل</span><span class="t-en">Comprehensive eye exam</span></h3>
             <p><span class="t-ar">قياس حدة البصر ودرجة النظارة، وفحص كامل لسطح العين وداخلها.</span><span class="t-en">Visual acuity, glasses prescription, and a full check of the front and back of the eye.</span></p>
             <span class="term">6/6 · Refraction</span>
+          </article>
+          <article class="svc">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M8 16c5 0 7 0 9 3s4 3 6 0 4-3 9-3"/><path d="M8 21c5 0 7 0 9 3s4 3 6 0 4-3 9-3" opacity=".6"/><path d="M8 27h24" opacity=".4"/></svg>
+            <h3><span class="t-ar">تصوير OCT وقياس ضغط العين</span><span class="t-en">OCT scan &amp; eye pressure</span></h3>
+            <p><span class="t-ar">تصوير مقطعي دقيق للشبكية والعصب البصري، وقياس ضغط العين، لاكتشاف أي تغيّر في وقت مبكر.</span><span class="t-en">Detailed cross-section imaging of the retina and optic nerve, plus eye-pressure measurement, to catch changes early.</span></p>
+            <span class="term">OCT · IOP</span>
           </article>
           <article class="svc">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="13" cy="20" r="7"/><circle cx="27" cy="20" r="7"/><circle cx="15" cy="20" r="2.5" fill="currentColor"/><circle cx="29" cy="21" r="2.5" fill="currentColor"/></svg>
