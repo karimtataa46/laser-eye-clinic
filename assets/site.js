@@ -104,6 +104,22 @@
     renderStatus(lang, now);
   }
 
+  // ---- Menu (phones and tablets): opens under the header, closes on a link, Escape or a click outside ----
+  const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
+  if (menuBtn && menu) {
+    const setMenu = open => {
+      menu.hidden = !open;
+      menuBtn.setAttribute('aria-expanded', String(open));
+    };
+    menuBtn.addEventListener('click', () => setMenu(menu.hidden));
+    menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('click', e => { if (!menu.hidden && !e.target.closest('header')) setMenu(false); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); }
+    });
+    matchMedia('(min-width: 1021px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+  }
+
   // ---- Copy buttons: <button data-copy="id-of-element-to-copy"> ----
   document.querySelectorAll('[data-copy]').forEach(btn => {
     const original = btn.innerHTML;

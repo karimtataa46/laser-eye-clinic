@@ -15,11 +15,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Marcellus&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=3">
+<link rel="stylesheet" href="assets/styles.css?v=4">
 </head>
 <body>
-<div class="demo">نموذج تصميم تجريبي، ليس الموقع الرسمي للعيادة · Demo design, not the clinic’s official website</div>
-
 <div id="site" dir="rtl" data-lang="ar">
 <script>try{if(localStorage.getItem('lec-lang')==='en'){var s=document.getElementById('site');s.dataset.lang='en';s.dir='ltr';document.documentElement.lang='en';}}catch(e){}</script>
 
@@ -36,19 +34,33 @@
       </a>
       <nav class="nav-links" aria-label="Main">
         <a href="index.html"><span class="t-ar">الرئيسية</span><span class="t-en">Home</span></a>
-        <a href="#types"><span class="t-ar">أنواع الليزر</span><span class="t-en">Laser types</span></a>
-        <a href="#recovery"><span class="t-ar">التعافي</span><span class="t-en">Recovery</span></a>
+        <a href="index.html#services"><span class="t-ar">خدماتنا</span><span class="t-en">Services</span></a>
+        <a href="laser.html" aria-current="page"><span class="t-ar">تصحيح النظر بالليزر</span><span class="t-en">Laser vision correction</span></a>
         <a href="index.html#visit"><span class="t-ar">المواعيد والعنوان</span><span class="t-en">Hours &amp; location</span></a>
       </nav>
-      <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
-      <a class="btn btn-gold" href="#book">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+      <a class="btn btn-gold nav-book" href="#book">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
         <span class="t-ar">احجز موعداً</span><span class="t-en">Book a visit</span>
       </a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
+        <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        <span class="sr"><span class="t-ar">القائمة</span><span class="t-en">Menu</span></span>
+      </button>
     </div>
+    <nav class="menu" id="menu" aria-label="Menu" hidden>
+      <div class="wrap">
+        <a href="index.html"><span class="t-ar">الرئيسية</span><span class="t-en">Home</span><svg class="arrow flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="index.html#services"><span class="t-ar">خدماتنا</span><span class="t-en">Services</span><svg class="arrow flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="laser.html" aria-current="page"><span class="t-ar">تصحيح النظر بالليزر</span><span class="t-en">Laser vision correction</span><svg class="arrow flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="index.html#why"><span class="t-ar">لماذا تختارنا</span><span class="t-en">Why choose us</span><svg class="arrow flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="index.html#visit"><span class="t-ar">المواعيد والعنوان</span><span class="t-en">Hours &amp; location</span><svg class="arrow flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </nav>
   </header>
 
-  <main>
+  <main id="top">
     <section class="page-hero">
       <div class="wrap">
         <nav class="crumbs" aria-label="Breadcrumb">
@@ -620,15 +632,75 @@
     </section>
   </main>
 
-  <footer>
-    <div class="wrap foot">
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="f-brand">
+        <a class="brand" href="index.html" aria-label="Laser Eye Clinic">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M2 20 C 10 8, 30 8, 38 20 C 30 32, 10 32, 2 20 Z" fill="none" stroke="#B38B3F" stroke-width="1.6"/>
+            <circle cx="20" cy="20" r="7.5" fill="none" stroke="#B38B3F" stroke-width="1.6"/>
+            <circle cx="20" cy="20" r="3.2" fill="#1C1912"/>
+            <circle cx="21.6" cy="18.4" r="1" fill="#FFFFFF"/>
+          </svg>
+          <span class="brand-name"><b>LASER EYE CLINIC</b><small>العيادة العينية الليزرية</small></span>
+        </a>
+        <p><span class="t-ar">فحص شامل للعين، وتصحيح النظر بالليزر، ومتابعة دقيقة لكل مريض في اللاذقية.</span><span class="t-en">Complete eye exams, laser vision correction and careful follow-up for every patient in Latakia.</span></p>
+        <a class="f-ig" href="https://www.instagram.com/clinic_laser_eye/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg>
+          <bdi>@clinic_laser_eye</bdi>
+        </a>
+      </div>
+      <nav class="f-col" aria-label="Footer">
+        <h2 class="f-h"><span class="t-ar">الصفحات</span><span class="t-en">Pages</span></h2>
+        <ul class="f-links">
+          <li><a href="index.html"><span class="t-ar">الرئيسية</span><span class="t-en">Home</span></a></li>
+          <li><a href="index.html#services"><span class="t-ar">خدماتنا</span><span class="t-en">Services</span></a></li>
+          <li><a href="laser.html" aria-current="page"><span class="t-ar">تصحيح النظر بالليزر</span><span class="t-en">Laser vision correction</span></a></li>
+          <li><a href="index.html#why"><span class="t-ar">لماذا تختارنا</span><span class="t-en">Why choose us</span></a></li>
+          <li><a href="index.html#visit"><span class="t-ar">المواعيد والعنوان</span><span class="t-en">Hours &amp; location</span></a></li>
+        </ul>
+      </nav>
+      <div class="f-col">
+        <h2 class="f-h"><span class="t-ar">أوقات الدوام</span><span class="t-en">Opening hours</span></h2>
+        <dl class="f-hours">
+          <div><dt><span class="t-ar">السبت إلى الأربعاء</span><span class="t-en">Saturday to Wednesday</span></dt><dd><span class="t-ar">١٠ ص – ٤ م</span><span class="t-en">10 am – 4 pm</span></dd></div>
+          <div><dt><span class="t-ar">الخميس</span><span class="t-en">Thursday</span></dt><dd><span class="t-ar">١٠ ص – ٣ م</span><span class="t-en">10 am – 3 pm</span></dd></div>
+          <div><dt><span class="t-ar">الجمعة</span><span class="t-en">Friday</span></dt><dd><span class="t-ar">مغلق</span><span class="t-en">Closed</span></dd></div>
+        </dl>
+      </div>
+      <div class="f-col">
+        <h2 class="f-h"><span class="t-ar">التواصل</span><span class="t-en">Contact</span></h2>
+        <address>
+          <span><span class="t-ar">اللاذقية، شارع الأميركان، عند مفرق مطعم الدار</span><span class="t-en">American Street, Latakia, at the turn by Al-Dar Restaurant</span></span>
+          <a class="f-phone" href="tel:0172576216">0172576216</a>
+          <span class="f-note"><span class="t-ar">هاتف العيادة (أرضي)</span><span class="t-en">Clinic phone (landline)</span></span>
+          <a class="f-map" href="https://www.google.com/maps/search/?api=1&amp;query=American+Street+Latakia+Syria" target="_blank" rel="noopener"><span class="t-ar">افتح في الخرائط</span><span class="t-en">Open in Maps</span></a>
+        </address>
+      </div>
+    </div>
+    <div class="wrap f-bottom">
       <span><span class="t-ar">© العيادة العينية الليزرية، اللاذقية، سوريا</span><span class="t-en">© Laser Eye Clinic, Latakia, Syria</span></span>
-      <a href="https://www.instagram.com/clinic_laser_eye/" target="_blank" rel="noopener">@clinic_laser_eye</a>
+      <a href="#top"><span class="t-ar">إلى الأعلى</span><span class="t-en">Back to top</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
     </div>
   </footer>
+
+  <nav class="quickbar" aria-label="اتصال سريع · Quick contact">
+    <a class="qb-call" href="tel:0172576216">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="t-ar">اتصال</span><span class="t-en">Call</span>
+    </a>
+    <a href="https://ig.me/m/clinic_laser_eye" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg>
+      <span class="t-ar">راسلنا</span><span class="t-en">Message</span>
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=American+Street+Latakia+Syria" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <span class="t-ar">الموقع</span><span class="t-en">Directions</span>
+    </a>
+  </nav>
 </div>
 
-<script src="assets/site.js?v=3"></script>
-<script src="assets/laser.js?v=3"></script>
+<script src="assets/site.js?v=4"></script>
+<script src="assets/laser.js?v=4"></script>
 </body>
 </html>
