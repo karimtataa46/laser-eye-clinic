@@ -10,7 +10,12 @@
     site.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
     const btn = document.getElementById('langBtn');
-    if (btn) btn.textContent = lang === 'ar' ? 'EN' : 'عربي';
+    if (btn) {
+      // The button offers the other language, so it is labelled in that language.
+      btn.textContent = lang === 'ar' ? 'EN' : 'عربي';
+      btn.lang = lang === 'ar' ? 'en' : 'ar';
+      btn.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+    }
     try { localStorage.setItem('lec-lang', lang); } catch (e) {}
     renderHours();
     document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));

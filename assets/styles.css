@@ -37,6 +37,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.2; te
 h4 { font-family: var(--body); font-size: 15px; font-weight: 600; line-height: 1.4; margin: 0; }
 .eyebrow { font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
 #site[data-lang="ar"] .eyebrow { letter-spacing: 0; font-size: 14px; }
+.eyebrow.keep-case { text-transform: none; letter-spacing: .04em; }
 .arrow { width: 16px; height: 16px; flex: none; }
 
 .demo { background: var(--ink); color: var(--gold-pale); text-align: center; font-size: 13px; padding: 7px 16px; line-height: 1.5; }
@@ -68,7 +69,14 @@ header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92
 .lang:hover { border-color: var(--gold); }
 .nav .btn { padding: 10px 18px; font-size: 14px; }
 @media (max-width: 1020px) { .nav-links { display: none; } }
-@media (max-width: 480px) { .nav { gap: 10px; } .nav .btn span { display: none; } .nav .btn { padding: 10px; } .brand-name small { display: none; } .brand-name b { font-size: 15px; } }
+@media (max-width: 480px) {
+  .nav { gap: 10px; }
+  /* Icon-only button on phones; the label stays available to screen readers */
+  .nav .btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .nav .btn { padding: 10px; }
+  .brand-name small { display: none; }
+  .brand-name b { font-size: 15px; }
+}
 
 /* Opening status (dot + text), filled in by site.js */
 .status { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
@@ -99,7 +107,7 @@ section.block { padding-block: 88px; }
 
 footer { border-top: 1px solid var(--line); padding-block: 36px; font-size: 14px; color: var(--muted); }
 .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.foot a { color: var(--gold-deep); text-decoration: none; }
+.foot a { color: var(--gold-deep); text-decoration: none; display: inline-block; padding-block: 10px; }
 
 /* ============ Home page ============ */
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: radial-gradient(ellipse 60% 70% at 78% 45%, #F8F1E1 0%, var(--white) 70%); }
